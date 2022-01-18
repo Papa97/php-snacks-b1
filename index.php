@@ -23,6 +23,12 @@ $calendario = [
         'punteggioCasa' => 50,
         'squadraOspiti' => 'VL Pesaro',
         'punteggioOspiti' => 66
+    ],
+    [
+        'squadraCasa' => 'Brindisi',
+        'punteggioCasa' => 50,
+        'squadraOspiti' => 'Napoli',
+        'punteggioOspiti' => 66
     ]
 ];
 
