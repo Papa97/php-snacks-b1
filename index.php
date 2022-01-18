@@ -25,6 +25,11 @@ $calendario = [
         'punteggioOspiti' => 66
     ]
 ];
+
+$name = $_GET["name"];
+$mail = $_GET["mail"];
+$age = $_GET["age"];
+
 ?>
 
 <!DOCTYPE html>
@@ -34,12 +39,13 @@ $calendario = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Snacks</title>
 </head>
 
 <body>
 
     <div>
+        <h2>Primo snack</h2>
         <ul>
             <?php
             for ($i = 0; $i < count($calendario); $i++) {
@@ -50,8 +56,20 @@ $calendario = [
             }
             ?>
         </ul>
-
     </div>
+    <div>
+        <h2>Secondo Snack</h2>
+        <?php
+        if (isset($name) && isset($mail) && isset($age)) {
+            if (strlen($name) >= 3 && strstr($mail, '@') && strstr($mail, '.')  &&  is_numeric($age)) {
+                echo "<p>Accesso riuscito</p>";
+            } else {
+                echo "<p>Accesso negato</p>";
+            }
+        }
+        ?>
+    </div>
+
 
 </body>
 
