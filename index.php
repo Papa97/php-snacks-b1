@@ -36,6 +36,46 @@ $name = $_GET["name"];
 $mail = $_GET["mail"];
 $age = $_GET["age"];
 
+$posts = [
+
+    '10/01/2019' => [
+        [
+            'title' => 'Post 1',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 1'
+        ],
+        [
+            'title' => 'Post 2',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 2'
+        ],
+    ],
+    '10/02/2019' => [
+        [
+            'title' => 'Post 3',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 3'
+        ]
+    ],
+    '15/05/2019' => [
+        [
+            'title' => 'Post 4',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 4'
+        ],
+        [
+            'title' => 'Post 5',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 5'
+        ],
+        [
+            'title' => 'Post 6',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 6'
+        ]
+    ],
+];
+
 ?>
 
 <!DOCTYPE html>
@@ -72,8 +112,31 @@ $age = $_GET["age"];
             } else {
                 echo "<p>Accesso negato</p>";
             }
+        } else {
+            echo "<h2>Attento ai dati che stai inserndo</h2>";
         }
         ?>
+    </div>
+
+    <div>
+        <h2>Posts</h2>
+        <div>
+            <?php
+            foreach ($posts as $data => $postData) {
+                echo "<h3>{$data}</h3>";
+                echo "<ul>";
+                foreach ($postData as $post) {
+                    echo "
+                        <li>
+                        <h3>{$post['title']}</h3>
+                        <p>{$post['author']}</p>
+                        <p>{$post['text']}</p>
+                        </li>";
+                }
+                echo "</ul>";
+            }
+            ?>
+        </div>
     </div>
 
 
